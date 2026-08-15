@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Room</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div class="brand-mark">✦</div>
+        <div><h1>Room</h1><p>Your little room inside ChatGPT</p></div>
+        <label class="switch" title="Enable Room"><input id="enabled" type="checkbox"><span></span></label>
+      </header>
+
+      <section>
+        <h2>Room style</h2>
+        <div class="presets" id="presets">
+          <button data-preset="strawberry" class="preset strawberry"><i></i><span>Strawberry<br>Cream</span></button>
+          <button data-preset="lavender" class="preset lavender"><i></i><span>Lavender<br>Dream</span></button>
+          <button data-preset="butter" class="preset butter"><i></i><span>Butter<br>Ribbon</span></button>
+          <button data-preset="rose" class="preset rose"><i></i><span>Rose<br>Night</span></button>
+          <button data-preset="midnight" class="preset midnight"><i></i><span>Midnight<br>Blue</span></button>
+        </div>
+        <label class="field">Accent color <input id="accent" type="color"></label>
+        <label class="field">Chat width <output id="chatWidthOut"></output><input id="chatWidth" type="range" min="640" max="1100" step="10"></label>
+        <label class="check"><input id="roundedBubbles" type="checkbox"> Rounded message cards</label>
+        <label class="check"><input id="sparkles" type="checkbox"> Soft floating sparkles</label>
+      </section>
+
+      <section>
+        <div class="section-title"><h2>Background</h2><button class="text-button" id="removeBackground">Remove</button></div>
+        <label class="upload" for="backgroundFile"><span>♡</span><b>Choose an illustration or GIF</b><small>GIF up to 6 MB · stored only in this browser</small></label>
+        <input id="backgroundFile" type="file" accept="image/*" hidden>
+        <label class="field">Visibility <output id="backgroundOpacityOut"></output><input id="backgroundOpacity" type="range" min="0" max="100"></label>
+        <label class="field">Blur <output id="backgroundBlurOut"></output><input id="backgroundBlur" type="range" min="0" max="24"></label>
+        <label class="field">Position
+          <select id="backgroundPosition"><option value="center">Center</option><option value="top">Top</option><option value="bottom">Bottom</option><option value="left">Left</option><option value="right">Right</option></select>
+        </label>
+      </section>
+
+      <section>
+        <h2>Profiles</h2>
+        <div class="profile-grid">
+          <article class="profile-card">
+            <button class="avatar-button" data-avatar="user"><img id="userAvatarPreview" alt="Your avatar"><span>+</span></button>
+            <input id="userAvatar" type="file" accept="image/*" hidden>
+            <label>Your name<input id="userName" maxlength="24"></label>
+            <label>Emoji<input id="userEmoji" maxlength="4"></label>
+          </article>
+          <article class="profile-card">
+            <button class="avatar-button" data-avatar="assistant"><img id="assistantAvatarPreview" alt="ChatGPT avatar"><span>+</span></button>
+            <input id="assistantAvatar" type="file" accept="image/*" hidden>
+            <label>Their name<input id="assistantName" maxlength="24"></label>
+            <label>Emoji<input id="assistantEmoji" maxlength="4"></label>
+          </article>
+        </div>
+        <label class="check"><input id="showProfiles" type="checkbox"> Show names and avatars beside messages</label>
+        <label class="field">Message box text<input id="composerPlaceholder" maxlength="48"></label>
+      </section>
+
+      <section>
+        <h2>Clock</h2>
+        <label class="check"><input id="showClock" type="checkbox"> Show clock widget</label>
+        <label class="field">Clock position
+          <select id="clockPosition"><option value="top-right">Top right</option><option value="top-left">Top left</option><option value="bottom-right">Bottom right</option><option value="sidebar">Sidebar corner</option></select>
+        </label>
+        <label class="check"><input id="clock24" type="checkbox"> Use 24-hour time</label>
+      </section>
+
+      <section>
+        <h2>Message box</h2>
+        <label class="check"><input id="composerStyled" type="checkbox"> Style the message box</label>
+        <label class="field">Box color <input id="composerColor" type="color"></label>
+        <label class="field">Opacity <output id="composerOpacityOut"></output><input id="composerOpacity" type="range" min="45" max="100"></label>
+        <label class="field">Roundness <output id="composerRadiusOut"></output><input id="composerRadius" type="range" min="10" max="38"></label>
+      </section>
+
+      <footer><span id="status">Saved locally ♡</span><button id="reset" class="text-button">Reset everything</button></footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

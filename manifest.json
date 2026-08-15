@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Room for ChatGPT",
+  "version": "0.8.4",
+  "description": "Turn ChatGPT into your own soft, private conversation room.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://chatgpt.com/*"],
+  "action": {
+    "default_title": "Open Room settings",
+    "default_popup": "popup.html"
+  },
+  "options_page": "popup.html",
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "css": ["content.css"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.html", "popup.css", "popup.js"],
+      "matches": ["https://chatgpt.com/*"]
+    }
+  ]
+}
