@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Room for ChatGPT",
-  "version": "0.9.0",
+  "version": "0.9.5",
   "description": "Turn ChatGPT into your own soft, private conversation room.",
   "icons": {
     "16": "icons/icon16.png",
